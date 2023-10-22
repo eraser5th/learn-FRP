@@ -1,10 +1,10 @@
-import { ViewItem } from '../util/ViewItem';
+import { ViewItem } from "~/util/ViewItem";
 
 export class Label implements ViewItem<HTMLSpanElement> {
   private element: HTMLSpanElement;
 
   constructor(label: string) {
-    this.element = document.createElement('span');
+    this.element = document.createElement("span");
     this.element.textContent = label;
   }
 

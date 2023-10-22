@@ -1,6 +1,6 @@
 import { Cell, CellSink } from "sodiumjs";
-import { ViewItem } from "../util/ViewItem";
-import { HTMLElementEvent } from "../util/HTMLElementEvent";
+import { ViewItem } from "~/util/ViewItem";
+import { HTMLElementEvent } from "~/util/HTMLElementEvent";
 import { Option, SelectOption } from "./Option";
 
 export class SSelect<Label extends string, Value extends string>

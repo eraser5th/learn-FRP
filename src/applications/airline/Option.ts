@@ -1,4 +1,4 @@
-import { ViewItem } from '../util/ViewItem';
+import { ViewItem } from "~/util/ViewItem";
 
 export type SelectOption<L extends string, V extends string> = {
   label: L;
@@ -9,7 +9,7 @@ export class Option implements ViewItem<HTMLOptionElement> {
   private element: HTMLOptionElement;
 
   constructor({ label, value }: SelectOption<string, string>) {
-    this.element = document.createElement('option');
+    this.element = document.createElement("option");
     this.element.textContent = label;
     this.element.value = value;
   }

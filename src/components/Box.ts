@@ -1,10 +1,10 @@
-import { ViewItem } from '../util/ViewItem';
+import { ViewItem } from "~/util/ViewItem";
 
 export class Box implements ViewItem<HTMLDivElement> {
   private element: HTMLDivElement;
 
   constructor() {
-    this.element = document.createElement('div');
+    this.element = document.createElement("div");
   }
 
   getElement() {

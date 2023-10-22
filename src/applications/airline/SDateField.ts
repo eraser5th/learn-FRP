@@ -1,5 +1,5 @@
 import { Cell } from "sodiumjs";
-import { ViewItem } from "../util/ViewItem";
+import { ViewItem } from "~/util/ViewItem";
 import { SSelect } from "./SSelect";
 import { range } from "lodash";
 

@@ -29,4 +29,10 @@ module.exports = {
       watch: true,
     },
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src/applications/"),
+      "~": path.resolve(__dirname, "src/"),
+    },
+  },
 };
