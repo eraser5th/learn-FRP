@@ -1,7 +1,7 @@
-import { Cell, CellSink } from 'sodiumjs';
-import { ViewItem } from '../util/ViewItem';
-import { HTMLElementEvent } from '../util/HTMLElementEvent';
-import { Option, SelectOption } from './Option';
+import { Cell, CellSink } from "sodiumjs";
+import { ViewItem } from "../util/ViewItem";
+import { HTMLElementEvent } from "../util/HTMLElementEvent";
+import { Option, SelectOption } from "./Option";
 
 export class SSelect<Label extends string, Value extends string>
   implements ViewItem<HTMLSelectElement>
@@ -15,23 +15,17 @@ export class SSelect<Label extends string, Value extends string>
     initialValue: Value
   ) {
     this.value = new Cell(initialValue);
-    this.element = document.createElement('select');
+    this.element = document.createElement("select");
     const options = selectOptions.map((option) => new Option(option));
     this.appendChild(...options);
 
-    this.value = SSelect.mkSelectedItem(this);
-  }
-
-  private static mkSelectedItem<L extends string, V extends string>(
-    box: SSelect<L, V>
-  ): Cell<V> {
-    const selected = new CellSink(box.getElement().value as V);
-    box.getElement().addEventListener('change', {
+    const selected = new CellSink(this.element.value as Value);
+    this.element.addEventListener("change", {
       handleEvent: (e: HTMLElementEvent<HTMLInputElement>) => {
-        selected.send(e.target.value as V);
+        selected.send(e.target.value as Value);
       },
     });
-    return selected;
+    this.value = selected;
   }
 
   getElement() {
