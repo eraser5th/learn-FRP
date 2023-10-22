@@ -1,6 +1,6 @@
-import Button from './SButton';
-import SLabel from './SLabel';
-import { CellLoop, Stream, Transaction } from 'sodiumjs';
+import { CellLoop, Stream, Transaction } from "sodiumjs";
+import Button from "@/ex1/SButton";
+import SLabel from "@/ex1/SLabel";
 
 class FRP {
   public static main() {
@@ -8,8 +8,8 @@ class FRP {
       const value: CellLoop<number> = new CellLoop<number>();
       const label: SLabel = new SLabel(value.map((i) => i.toString()));
 
-      const btnPlus: Button = new Button('+');
-      const btnMinus: Button = new Button('-');
+      const btnPlus: Button = new Button("+");
+      const btnMinus: Button = new Button("-");
 
       const sDelta: Stream<number> = btnPlus.sClicked
         .map((u) => 1)

@@ -1,6 +1,6 @@
 import { Box } from "~/components/Box";
-import SLabel from "./SLabel";
-import STextField from "./STextField";
+import SLabel from "@/ex2/SLabel";
+import STextField from "@/ex2/STextField";
 
 import { Cell } from "sodiumjs";
 

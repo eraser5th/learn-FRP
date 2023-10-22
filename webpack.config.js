@@ -13,6 +13,10 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src", "applications"),
+      "~": path.resolve(__dirname, "src"),
+    },
     extensions: [".ts", ".js"],
   },
   module: {
@@ -27,12 +31,6 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
       watch: true,
-    },
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src/applications/"),
-      "~": path.resolve(__dirname, "src/"),
     },
   },
 };

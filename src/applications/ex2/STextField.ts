@@ -1,6 +1,6 @@
-import { Cell, Stream, StreamSink } from 'sodiumjs';
-import { HTMLElementEvent } from '../util/HTMLElementEvent';
-import { ViewItem } from '../util/ViewItem';
+import { Cell, Stream, StreamSink } from "sodiumjs";
+import { HTMLElementEvent } from "~/util/HTMLElementEvent";
+import { ViewItem } from "~/util/ViewItem";
 
 class TextField implements ViewItem<HTMLInputElement> {
   public text: Cell<string>;
@@ -15,9 +15,9 @@ class TextField implements ViewItem<HTMLInputElement> {
     this.text = sUserChangesSnk
       .filter((s) => parseInt(s) === parseInt(s))
       .hold(initText);
-    this.input = document.createElement('input');
+    this.input = document.createElement("input");
     this.input.value = this.text.sample();
-    this.input.addEventListener('input', {
+    this.input.addEventListener("input", {
       handleEvent: (event: HTMLElementEvent<HTMLInputElement>) => {
         this.text = this.text.map(() => event.target?.value);
         sUserChangesSnk.send(event.target.value);

@@ -1,5 +1,5 @@
-import { Unit, Stream, StreamSink } from 'sodiumjs';
-import { ViewItem } from '../util/ViewItem';
+import { Unit, Stream, StreamSink } from "sodiumjs";
+import { ViewItem } from "~/util/ViewItem";
 
 class Button implements ViewItem<HTMLButtonElement> {
   private button: HTMLButtonElement;
@@ -8,12 +8,12 @@ class Button implements ViewItem<HTMLButtonElement> {
   public sClicked: Stream<Unit>;
 
   constructor(name: string) {
-    this.button = document.createElement('button');
+    this.button = document.createElement("button");
     this.button.textContent = name;
     this.sClickedSink = new StreamSink<Unit>();
     this.sClicked = this.sClickedSink;
 
-    this.button.addEventListener('click', (event: Event) => {
+    this.button.addEventListener("click", (event: Event) => {
       this.sClickedSink.send(Unit.UNIT);
     });
   }

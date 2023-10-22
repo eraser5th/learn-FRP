@@ -1,5 +1,5 @@
-import { Cell, Operational } from 'sodiumjs';
-import { ViewItem } from '../util/ViewItem';
+import { Cell, Operational } from "sodiumjs";
+import { ViewItem } from "~/util/ViewItem";
 
 class SLabel implements ViewItem<HTMLHeadingElement> {
   private label: HTMLHeadingElement;
@@ -9,7 +9,7 @@ class SLabel implements ViewItem<HTMLHeadingElement> {
       this.setText(t);
     });
 
-    this.label = document.createElement('h5');
+    this.label = document.createElement("h5");
   }
 
   setText(t: string) {
