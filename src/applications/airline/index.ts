@@ -1,7 +1,7 @@
-import { Box } from "~/components/Box";
 import { Rule } from "~/util/Rule";
+import { Box } from "~/components/Box";
+import { Label } from "~/components/Label";
 import { SDateField } from "@/airline/SDateField";
-import { Label } from "@/airline/Label";
 import { SButton } from "@/airline/SButton";
 
 class Airline {

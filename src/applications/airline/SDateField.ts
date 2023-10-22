@@ -1,7 +1,7 @@
 import { Cell } from "sodiumjs";
 import { ViewItem } from "~/util/ViewItem";
-import { SSelect } from "./SSelect";
-import { range } from "lodash";
+import { range } from "~/util/lib";
+import { SSelect } from "@/airline/SSelect";
 
 const createOption = <S>(s: S) => ({ label: s, value: s });
 
