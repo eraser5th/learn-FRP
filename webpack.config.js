@@ -4,9 +4,9 @@ module.exports = {
   mode: "development",
   entry: {
     main: "./src/index.ts",
-    ex1: "./src/ex1/index.ts",
-    ex2: "./src/ex2/index.ts",
-    airline: "./src/airline/index.ts",
+    ex1: "./src/applications/ex1/index.ts",
+    ex2: "./src/applications/ex2/index.ts",
+    airline: "./src/applications/airline/index.ts",
   },
   output: {
     filename: "[name].js",
