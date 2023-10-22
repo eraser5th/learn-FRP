@@ -4,17 +4,24 @@ import { Label } from "~/components/Label";
 import { SDateField } from "@/airline/SDateField";
 import { SButton } from "@/airline/SButton";
 
+const unlucky = (date: Date) => {
+  const day = date.getDate();
+  return day === 4 || day === 14 || day === 24;
+};
+
 class Airline {
   public static main() {
     const dep = new SDateField();
     const ret = new SDateField();
 
-    dep.value.listen(console.log);
-
     const r1 = new Rule<Date, Date>(
       (dep, ret) => ret.getTime() - dep.getTime() > 0
     );
-    const valid = r1.reify(dep.value, ret.value);
+    const r2 = new Rule<Date, Date>(
+      (dep, ret) => !unlucky(dep) && !unlucky(ret)
+    );
+    const valid = r1.and(r2).reify(dep.value, ret.value);
+
     const ok = new SButton("OK", valid);
 
     ok.sClicked.listen((_) => console.log("HI"));
